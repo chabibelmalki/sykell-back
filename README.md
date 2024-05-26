@@ -8,6 +8,14 @@ Before starting the setup, ensure you have the following installed on your syste
 
 - **Go (v1.18 or later)**: Required for the backend. Check your Go version by running `go version` in your terminal. If you need to install it, visit [Go's official site](https://golang.org/dl/).
  
+ ## Installing Dependencies
+
+To install the required dependencies for the project, navigate to the project directory and run:
+
+```bash
+go mod tidy
+```
+
 # Backend Setup
 
 If you wish to specify a custom port for the backend (default is 8080), set the PORT environment variable:
