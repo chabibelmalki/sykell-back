@@ -6,7 +6,7 @@ import (
 )
 
 // APIKey - To modify
-const APIKey = "your_api_key"
+const APIKey = "STATICAPIkeyForTestingAnAuthMethod"
 
 // AuthMiddleware is a middleware function that checks for a valid API key in the request header
 func AuthMiddleware(next http.Handler) http.Handler {
