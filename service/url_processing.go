@@ -157,16 +157,14 @@ func (urlinfo *URLInfo) checkLoginForm() {
 	traverseNodes(urlinfo.rootNode, func(n *html.Node) bool {
 		if n.Type == html.ElementNode && n.Data == "form" {
 			formDetected = true
-			for c := n.FirstChild; c != nil; c = c.NextSibling {
-				if c.Type == html.ElementNode && c.Data == "input" {
-					for _, attr := range c.Attr {
-						if attr.Key == "type" && attr.Val == "password" {
-							hasPasswordField = true
-						}
-						if attr.Key == "type" && (attr.Val == "submit" || attr.Val == "button") {
-							hasSubmitButton = true
-						}
-					}
+		}
+		if n.Type == html.ElementNode && n.Data == "input" {
+			for _, attr := range n.Attr {
+				if attr.Key == "type" && attr.Val == "password" {
+					hasPasswordField = true
+				}
+				if attr.Key == "type" && (attr.Val == "submit" || attr.Val == "button") {
+					hasSubmitButton = true
 				}
 			}
 		}
